@@ -30,15 +30,23 @@ class MainActivity : AppCompatActivity() {
         //var arrays = resources.getStringArray(R.array.names)
 
 
-        // val range2 = 'a'..'z'
-       for (c in bad) badArray.add(nameArray[c])
-           //for (c in normal) {normalArray.add(nameArray[c])}
-       // for (c in nice) niceArray.add(nameArray[c])
-      //  for (c in excellent) excellentArray.add(normalArray[c])
+        for ((index, grade) in gradeArray.withIndex()) {
+            when (grade) {
+                in bad -> {badArray.add("Ученик: ${nameArray[index]} – $grade")}
+                in normal -> {normalArray.add("Ученик: ${nameArray[index]} – $grade")}
+                in nice-> {niceArray.add("Ученик: ${nameArray[index]} – $grade")}
+               // in excellent -> {excellentArray.add("Ученик: ${nameArray[index]} – $grade")}
+            }
 
-        for(i in 0..badArray.size)Log.d("MyLog", "Плохие оценки: Ученик: - ${badArray[i]}")
-        //   for(i in 0..normalArray.size){Log.d("MyLog", "Норм оценки: Ученик: - ${normalArray[i]}")}
-        /*for(i in 0..niceArray.size)Log.d("MyLog", "Хор оценки: Ученик: - ${niceArray[i]}")*/
+        }
+
+        badArray.forEach { Log.d("MyLog", "Плохие оценки: $it") }
+        normalArray.forEach { Log.d("MyLog", "Плохие оценки: $it") }
+        niceArray.forEach { Log.d("MyLog", "Плохие оценки: $it") }
+       // excellentArray.forEach { Log.d("MyLog", "Плохие оценки: $it") }
+
+
+
 
     }
 
