@@ -31,13 +31,18 @@ class MainActivity : AppCompatActivity() {
 
 
         // val range2 = 'a'..'z'
-        for (c in bad)badArray.add(nameArray[c])
-        for (c in normal)normalArray.add(normalArray[c])
+       for (c in bad) badArray.add(nameArray[c])
+           //for (c in normal) {normalArray.add(nameArray[c])}
+       // for (c in nice) niceArray.add(nameArray[c])
+      //  for (c in excellent) excellentArray.add(normalArray[c])
 
-            Log.d("MyLog", "Плохие оценки: Ученик: -  ${badArray[c]}")
-        }
+        for(i in 0..badArray.size)Log.d("MyLog", "Плохие оценки: Ученик: - ${badArray[i]}")
+        //   for(i in 0..normalArray.size){Log.d("MyLog", "Норм оценки: Ученик: - ${normalArray[i]}")}
+        /*for(i in 0..niceArray.size)Log.d("MyLog", "Хор оценки: Ученик: - ${niceArray[i]}")*/
 
     }
+
 }
+
 
 
