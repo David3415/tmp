@@ -55,10 +55,10 @@
         android:inputType="number|numberDecimal|numberSigned"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/teResult" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 
     <TextView
-        android:id="@+id/teResult"
+        android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -80,12 +80,14 @@
         app:layout_constraintTop_toBottomOf="@+id/edA" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnResult"
         android:layout_width="392dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/user"
-        android:text="Button"
+        android:onClick="onClickResult"
+        android:text="@string/result"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edB"
         app:layout_constraintHorizontal_bias="0.0"
