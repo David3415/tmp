@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">tmpApp1</string>
+    <string name="title">Вычислить "C"</string>
+    <string name="result_info">Результат:&#160;</string>
+    <string name="input_a">Введите значение a</string>
+    <string name="input_b">Введите значение b</string>
 </resources>

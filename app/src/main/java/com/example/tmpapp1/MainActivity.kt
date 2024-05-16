@@ -15,10 +15,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val names = resources.getStringArray(R.array.names)
-        for ((index, name) in names.withIndex()) {
-            resultArray.add("Имя: $name - прибыль = ${earnArray[index] - lostArray[index]}")
-            Log.d("MyLog", "Статистика -/- ${resultArray[index]}")
-        }
+
     }
 }
