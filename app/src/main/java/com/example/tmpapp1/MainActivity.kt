@@ -11,11 +11,7 @@ import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    val lostArray = arrayOf(10000, 2300)
-    val earnArray = arrayOf(15000, 300)
-    val resultArray = ArrayList<String>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+       override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
