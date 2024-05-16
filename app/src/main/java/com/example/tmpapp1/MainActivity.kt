@@ -19,12 +19,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
+        var user=User()
+
         setContentView(binding.root)
+        user.calc(binding.edA.text.toString(),
+               binding.edB.text.toString())
     }
 
     fun onClickResult(view: View) {
         if (!isBoolEmpty()){
-            val res=getString(R.string.result_info)+getResult()
+            val res=getString(R.string.result_info)//+getResult()
             binding.tvResult.text=res
         }
     }
@@ -37,7 +41,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getResult(): String {
+
+
+    /*private fun getResult(): String {
         val a: Double
         val b: Double
         binding.apply {
@@ -45,6 +51,6 @@ class MainActivity : AppCompatActivity() {
             b = edB.text.toString().toDouble()
         }
         return sqrt((a.pow(2) + b.pow(2))).toString()
-    }
+    }*/
 }
 

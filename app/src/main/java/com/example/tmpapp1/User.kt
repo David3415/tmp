@@ -1,14 +1,16 @@
 package com.example.tmpapp1
 
-class User(
-    var name: String? = null,
-    var id: String? = null,
-    var age: Int? = null
-) {
-    fun addAge(years: Int) {
-        age = age?.plus(years)
-    }
-    fun printUserInfo(){
+import kotlin.math.pow
+import kotlin.math.sqrt
 
-    }
+class User(){//var str1: String, var str2: String) {
+
+fun calc(str1: String, str2: String): String {
+    val a: Double
+    val b: Double
+    a = str1.toDouble()
+    b = str2.toDouble()
+
+    return sqrt((a.pow(2) + b.pow(2))).toString()
+}
 }
