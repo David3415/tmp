@@ -1,24 +1,30 @@
 package com.example.tmpapp1
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    val lostArray = arrayOf(10000, 2300)
-    val earnArray = arrayOf(15000, 300)
-    val resultArray = ArrayList<String>()
-
+    private var launcher: ActivityResultLauncher<Intent>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        launcher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+                if (result.resultCode == RESULT_OK) {
+                    val text = result.data?.getStringExtra("key1")
+                }
+            }
+    }
 
-        val names = resources.getStringArray(R.array.names)
-        for ((index, name) in names.withIndex()) {
-            resultArray.add("Имя: $name - прибыль = ${earnArray[index] - lostArray[index]}")
-            Log.d("MyLog", "Статистика -/- ${resultArray[index]}")
-        }
+    fun onClickRun(view: View) {
+        launcher?.launch(Intent(this, SecActivity::class.java))
     }
 }
